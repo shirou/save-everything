@@ -1,0 +1,58 @@
+{
+  "name": "save-everything",
+  "displayName": "save-everything",
+  "description": "save every file",
+  "version": "0.0.1",
+  "publisher": "rrudi",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "history",
+    "save",
+    "backup"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "configuration": {
+    "type": "object",
+    "title": "save-everything configuration",
+    "properties": {
+      "save-everything.root": {
+        "type": "string",
+        "default": "~/.saves",
+        "description": "root path"
+      },
+      "save-everything.exclude": {
+        "type": "string",
+        "default": ["$\\."],
+        "description": "Files to not save."
+      },
+      "save-everything.enabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "save-everything enabled"
+      }
+    }
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
