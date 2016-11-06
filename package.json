@@ -2,7 +2,7 @@
   "name": "save-everything",
   "displayName": "save-everything",
   "description": "save every file",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "rrudi",
   "engines": {
     "vscode": "^1.5.0"
@@ -18,6 +18,12 @@
   "activationEvents": [
     "*"
   ],
+  "homepage": "https://github.com/shirou/save-everything/blob/master/README.md",
+  "bugs": "https://github.com/shirou/save-everything/issues",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/shirou/save-everything.git"
+  },
   "main": "./out/src/extension",
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
