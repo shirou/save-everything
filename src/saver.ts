@@ -73,7 +73,7 @@ export class Saver {
 
     private mkDirRecursive(fileName: string): boolean {
         try {
-            this.mkdirp.sync(this.resolve(path.dirname(fileName)));
+            this.mkdirp.sync(path.dirname(fileName));
             return true;
         }
         catch (err) {
@@ -84,7 +84,8 @@ export class Saver {
     }
 
     private resolve(dirName: string): string {
-        return path.resolve(dirName).replace("~", this.home());
+        const p = dirName.replace("~", this.home());
+        return path.normalize(path.resolve(p));
     }
 
     private home(): string{
