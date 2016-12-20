@@ -13,12 +13,11 @@ interface ISettings {
 
 export class Saver {
     private mkdirp = require('mkdirp');
-    private settings: ISettings;    
+    private settings: ISettings;
     private excludes: RegExp[];
 
     constructor() {
         this.settings = this.readSettings();
-        this.mkDirRecursive(this.settings.root);
 
         // compile
         this.excludes = new Array(this.settings.exclude.length);
@@ -28,7 +27,7 @@ export class Saver {
     }
 
     public save(document: vscode.TextDocument) {
-        if (!this.settings.enabled) {   
+        if (!this.settings.enabled) {
             return;
         }
         if (!(document && document.fileName)) {
@@ -69,7 +68,7 @@ export class Saver {
             exclude: <string[]>config.get('exclude') || ["$\."],
             enabled: <boolean>config.get('enabled') || true,
         };
-    }    
+    }
 
     private mkDirRecursive(fileName: string): boolean {
         try {
