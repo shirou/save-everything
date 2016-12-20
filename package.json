@@ -2,7 +2,7 @@
   "name": "save-everything",
   "displayName": "save-everything",
   "description": "save every file",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "rrudi",
   "engines": {
     "vscode": "^1.5.0"
