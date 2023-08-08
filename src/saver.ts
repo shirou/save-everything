@@ -41,10 +41,13 @@ export class Saver {
         }
         */
 
+        // replace Windows drive letter to one character (C: -> C)
+        const filename = document.fileName.replace(/(^[c-zC-Z]):/, "$1");
+
         const f = this.resolve(path.join(
                 this.settings.root,
                 this.datePath(),
-                document.fileName
+                filename
         ));
         if (this.mkDirRecursive(f)) {
             const text = document.getText();
